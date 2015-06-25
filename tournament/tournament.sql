@@ -50,4 +50,4 @@ select p.player_id, p.player_name, count(m.opponent_1) as matches from players p
 -- create a view that will show the player standings
 -- this view will use the previous two views
 create view player_standings as
-select mw.player_id, mw.player_name, mw.wins, mp.matches from matches_won mw join matches_played mp on mw.player_id=mp.player_id order by mw.wins desc;
+select mw.player_id, mw.player_name, mw.wins, mp.matches from matches_won mw join matches_played mp on mw.player_id=mp.player_id order by mw.wins desc, mw.player_id;
